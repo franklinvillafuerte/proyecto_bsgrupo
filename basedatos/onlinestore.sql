@@ -12,6 +12,9 @@ File Encoding         : 65001
 
 Date: 2015-12-03 16:10:05
 */
+DROP DATABASE IF EXISTS bd_onlinestore;
+CREATE DATABASE bd_onlinestore;
+USE bd_onlinestore;
 
 SET FOREIGN_KEY_CHECKS=0;
 
