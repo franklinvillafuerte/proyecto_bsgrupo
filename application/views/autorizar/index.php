@@ -10,20 +10,20 @@
       	<script src="/extra/js/jquery-1.11.3.min.js"></script>
       	<script src="/extra/bootstrap/js/bootstrap.min.js"></script>
       	<script src="/extra/js/validator.min.js"></script>
+
   	</head>
   
   	<body>
  		<div class="container">
 	        <div class="card card-container">
-				<a href="#">Registro de usuario</a>
+				<div align="center"><a class="btn btn-info" href="<?php echo base_url('usuarios/registrar_usuario') ?>">Registrar Usuario Aquí</a></div><br>
 	            <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
-	            <p id="profile-name" class="profile-name-card"></p>	            
+	            <p id="profile-name" class="profile-name-card"></p>
 	            <form class="form-signin">
-	            	<?php echo validation_errors();?>
-	            	<?php echo form_open('verifylogin');?>
 	                <span id="reauth-email" class="reauth-email"></span>
 	                <input type="email" id="inputEmail" class="form-control" placeholder="Direccion de Email" required autofocus>
-	                <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>	               
+	                <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+	               
 	                <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Entrar</button>
 	            </form><!-- /form -->
 	            <a href="#" class="forgot-password">

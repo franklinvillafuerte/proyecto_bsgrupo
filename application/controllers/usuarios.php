@@ -1,7 +1,13 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Autorizar extends CI_Controller {
-
+require_once 'AbstractController.php';
+class usuarios extends AbstractController 
+{
+	public function __construct()
+	{
+		parent::__construct();
+		$this->load->model('usuario');
+	}
 	/**
 	 * Index Page for this controller.
 	 *
@@ -22,8 +28,26 @@ class Autorizar extends CI_Controller {
 		$this->load->view('autorizar/index');
 	}
 
+	public function registrar_usuario()
+	{		
+		if ($this->is_post())
+		{
+			$this->usuario->poblar_propiedades($this->arregloPost);
+			$this->usuario->insert();
+			redirect('autorizar/index');
+		}
+		$datos = $this->formulario_usuarios();
+		$datos['titulo']='Registrar Usuario';
+		$this->load->view('usuarios/registrar_usuario',$datos);
+	}
+
 	//registro de nuevos usuarios	
 }
 
 /* End of file welcome.php */
 /* Location: ./application/controllers/welcome.php */
+
+
+
+
+
